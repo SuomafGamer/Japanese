@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Japense Practice</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="script.js"></script>
+</head>
+
+<body>
+    <div>
+        <div id="header">
+            <div id="title">Japanese にほんご</div>
+            <div class="flex-row gap">
+                <div id="links"><a href="https://arcade.bunpro.jp/gokana/game" target="_blank" rel="no-referrer">Bunpro
+                        Kana Game</a></div>
+                <div id="links"><a href="https://app.kanjialive.com/" target="_blank" rel="no-referrer">Kanji Alive</a>
+                </div>
+            </div>
+        </div>
+        <div style="text-align: center; margin: 20px;">
+            <div> Hello, welcome to my currently simple tool for Practicing Japanese. </div>
+            <div>I am planning to make a flashcard kana game like bunpro's (link up top) that focuses on what you get wrong.</div>
+            <div>
+                I also plan to add flashcards for <a href="https://kanjialive.com/214-traditional-kanji-radicals/"
+                    target="_blank" rel="no-referrer">Kanji Radicals</a>
+            </div>
+        </div>
+        <div class="kana-wrapper">
+            <div class="kana-container">
+                <div>Hiragana ひらがな</div>
+                <div id="hiragana">
+                    <!-- GENERATED ON INIT -->
+                </div>
+            </div>
+            <div class="kana-container">
+                <div>Katakana カタカナ</div>
+                <div id="katakana">
+                    <!-- GENERATED ON INIT -->
+                </div>
+            </div>
+            <div class="converter-container">
+                <div style="display: inline-flex;">
+                    <span id="hiraganaConvert" class="convert-option selected" onclick="selectConversion('hiragana')">
+                        Hiragana
+                    </span>
+                    <span id="katakanaConvert" class="convert-option" onclick="selectConversion('katakana')">
+                        Katakana
+                    </span>
+                </div>
+                <textarea placeholder="Romaji Conversion" class="text-converter" oninput="conversion(event)"
+                    spellcheck="false"></textarea>
+            </div>
+        </div>
+    </div>
+    <script>
+        init();
+    </script>
+</body>
+
+</html>
