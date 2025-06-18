@@ -296,7 +296,7 @@ function init() {
 function conversion(event) {
     console.log("Input:", event.target.value);
     var map = window[convertTo + 'Map'];
-    var _text = event.target.value;
+    var _text = event.target.value.toLowerCase();
     // Four Characters (i.e. kkya = っきゃ)
     _text = _text.replace(/([kstnhmyrgzdb]){2}(y[auo])/g, (fullMatch, letter, y/*, position, entireText*/) => {
         return `っ${map[`${letter}i`]}${map[`${y}`]}`;
