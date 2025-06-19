@@ -30,9 +30,9 @@ var hiraganaMap = {
     'je': 'じぇ',
     'jo': 'じょ',
     // Small
-    'ya': 'ゃ',
-    'yu': 'ゅ',
-    'yo': 'ょ',
+    'xya': 'ゃ',
+    'xyu': 'ゅ',
+    'xyo': 'ょ',
     // Extra
     'cho': 'ちょ',
     'chu': 'ちゅ',
@@ -176,9 +176,9 @@ var katakanaMap = {
     'je': 'ジェ',
     'jo': 'ジョ',
     // Small
-    'ya': 'ャ',
-    'yu': 'ュ',
-    'yo': 'ョ',
+    'xya': 'ャ',
+    'xyu': 'ュ',
+    'xyo': 'ョ',
     // Extra
     'cho': 'チョ',
     'chu': 'チュ',
@@ -335,7 +335,7 @@ function conversion(event) {
     var caretPos = textArea.selectionStart;
     // Four Characters (i.e. kkya = っきゃ)
     _text = _text.replace(/([kstnhmyrgzdbp]){2}(y[auo])/g, (fullMatch, letter, y/*, position, entireText*/) => {
-        return `っ${map[`${letter}i`]}${map[`${y}`]}`;
+        return `っ${map[`${letter}i`]}${map[`x${y}`]}`;
     });
     // Three Characters Unique (i.e. shi = し)
     _text = _text.replace(/shi|chi|cho|chu|cha|tsu/g, (fullMatch/*, position, entireText*/) => {
@@ -343,7 +343,7 @@ function conversion(event) {
     });
     // Three Characters (i.e. kya = きゃ)
     _text = _text.replace(/([kstnhmyrgzdbp])(y[auo])/g, (fullMatch, letter, y/*, position, entireText*/) => {
-        return `${map[`${letter}i`]}${map[`${y}`]}`;
+        return `${map[`${letter}i`]}${map[`x${y}`]}`;
     });
     // Three Characters (i.e. kka = っか)
     _text = _text.replace(/([kstnhmyrgzdbp]){2}([aiueo])/g, (fullMatch, letter, vowel/*, position, entireText*/) => {
